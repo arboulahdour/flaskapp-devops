@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return '<h1><center>This Sample Flask Application</center></h1>'
+  return '<h1><center>Flask Application For DevOps</center></h1>'
 
 app.run(host='0.0.0.0', port=5000)
 ~~~
@@ -32,9 +32,9 @@ app.run(host='0.0.0.0', port=5000)
 
 ~~~sh
 FROM  alpine:3.8
-RUN   mkdir  /var/flasksite
-COPY  .  /var/flasksite/
-WORKDIR  /var/flasksite/
+RUN   mkdir  /var/cicdLab
+COPY  .  /var/cicdLab
+WORKDIR  /var/cicdLab
 RUN apk add python3
 RUN  pip3 install  -r requirements.txt
 EXPOSE 5000
@@ -55,14 +55,9 @@ git clone https://github.com/sebinxavi/Docker-Image-Of-Simple-Python-Flask-Appli
 
 Go to the directory that has the Dockerfile and run the following command to build the Docker image. The -t flag lets you tag your image so it's easier to find later using the docker images command:
 ~~~sh
-cd Docker-Image-Of-Simple-Python-Flask-Application/
-docker build -t <your username>/python-web-app:1> . 
+cd flaskapp-devops/
+docker build -t <your username>/flaskapp:1> . 
 ~~~
-
-<p align="left">
-  <img width="600" height="250" src="https://i.ibb.co/WDvj4p8/2.png">
-</p>
-
 
 Your image will now be listed by Docker by the command:
 ~~~sh
@@ -71,12 +66,8 @@ docker image ls
 
 Now run the container from the Image created:
 ~~~sh
-docker container run --name pythonapp -p 80:5000 -d sebinxavi/python-web-app:1
+docker container run --name flaskapp -p 80:5000 -d arboulahdour/flaskapp:1
 ~~~
-
-<p align="left">
-  <img width="600" height="250" src="https://i.ibb.co/MDhqMVX/3.png">
-</p>
 
 To test your app, get the port of your app that Docker mapped:
 ~~~sh
@@ -91,8 +82,6 @@ curl -I http://SERVER-IP:80
 curl -L http://SERVER-IP:80
 ~~~
 
-![alt text](https://i.ibb.co/7JSjkpG/4.png)
-
 You can also push this image to Docker Hub repositories
 
 [Docker Hub repositories](https://docs.docker.com/docker-hub/repos/) allow you to share container images with your team, customers, or the Docker community at large.
@@ -100,18 +89,10 @@ You can also push this image to Docker Hub repositories
 I have uploaded this Container Image to docker hub and you can download the image by
 
 ~~~sh
-docker pull sebinxavi/python-web-app:1
+docker pull arboulahdour/flaskapp:1
 ~~~
 
-<p align="left">
-  <img width="600" height="250" src="https://i.ibb.co/YRxpzGg/5.png">
-</p>
-
-![alt text](https://i.ibb.co/D55Bzbn/6.png)
-
-
 ## Author
-Created by [@sebinxavi](https://www.linkedin.com/in/sebinxavi/) - feel free to contact me and advise as necessary!
+Created by @Arboulahdour
 
-<a href="mailto:sebin.xavi1@gmail.com"><img src="https://img.shields.io/badge/-sebin.xavi1@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
-<a href="https://www.linkedin.com/in/sebinxavi"><img src="https://img.shields.io/badge/-Linkedin-blue"/></a>
+<a href="mailto:ar.boulahdour@outlook.com">E-mail me !</a>
