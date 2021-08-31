@@ -4,6 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return '<h1><center>Flask Application For DevOps</center></h1>'
+  return '<body style="background: black; color: white;"><h1><center>Flask Application For DevOps Lab</center></h1></body>'
 
 app.run(host='0.0.0.0', port=5000)
