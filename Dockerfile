@@ -1,10 +1,10 @@
 FROM  alpine:3.8
     
-RUN   mkdir  /var/flasksite
+RUN   mkdir  /var/flaskapp
 
-COPY  .  /var/flasksite/
+COPY  .  /var/flaskapp/
 
-WORKDIR  /var/flasksite/
+WORKDIR  /var/flaskapp/
 
 RUN apk add python3 
 
