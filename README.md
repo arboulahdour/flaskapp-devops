@@ -4,7 +4,7 @@ The purpose of this lab is to show you how to get a Python-Flask application int
 We will build a Docker image of a simple web application in Python, then we will deploy it as container from the created image on developement server.
 
 ## Prerequisites
-- 02 Centos 8 Servers
+- 01 server (ubuntu/centos)
 
 ## Install Docker Engine
 
